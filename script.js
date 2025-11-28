@@ -21,16 +21,15 @@ function calculateFromCTC(ctc, pfCap, enablePF, enablePT, enableESI) {
     const employerEPF = enablePF ? Math.round(pfCap * 0.12) - employerEPS : 0;
     const edli = enablePF ? 75 : 0;
     const epfAdmin = enablePF ? Math.round(pfCap * 0.005) : 0;
-    const edliAdmin = enablePF ? Math.round(pfCap * 0.0001) : 0;
     
     // Calculate gross (approximate first)
-    let tempGross = monthlyCTC - (employerEPF + employerEPS + edli + epfAdmin + edliAdmin);
+    let tempGross = monthlyCTC - (employerEPF + employerEPS + edli + epfAdmin);
     
     // ESI applicability
     const esiApplicable = enableESI && tempGross <= 21000;
     const employerESI = esiApplicable ? Math.round(tempGross * 0.0325) : 0;
     
-    const totalEmployerCharges = employerEPF + employerEPS + edli + epfAdmin + edliAdmin + employerESI;
+    const totalEmployerCharges = employerEPF + employerEPS + edli + epfAdmin + employerESI;
     
     // Final gross salary
     const grossSalary = monthlyCTC - totalEmployerCharges;
