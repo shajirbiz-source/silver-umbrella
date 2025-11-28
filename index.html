@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CTC to Salary Breakdown Calculator</title>
+    <title>CIGI CTC Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <div class="card">
             <div class="header">
-                <h1>CTC to Salary Calculator</h1>
+                <h1>CIGI CTC Calculator</h1>
                 <p>Enter CTC to calculate salary components and take-home</p>
             </div>
 
             <div class="content">
-                <!-- Input Section -->
                 <div class="input-section">
                     <h2>Input CTC Details</h2>
+
                     <div class="input-grid">
                         <div class="input-group">
                             <label>Annual CTC (₹)</label>
-                            <input type="number" id="annualCTC" value="1150000" placeholder="Enter annual CTC">
+                            <input type="number" id="annualCTC" value="1150000">
                         </div>
+
                         <div class="input-group">
                             <label>PF Restricted Amount (₹)</label>
-                            <input type="number" id="pfRestricted" value="15000" placeholder="15000">
+                            <input type="number" id="pfRestricted" value="15000">
                         </div>
                     </div>
-                    
-                    <!-- Toggle Switches -->
+
                     <div class="toggle-section">
                         <h3>Enable/Disable Components</h3>
                         <div class="toggle-grid">
@@ -39,12 +39,14 @@
                                     <div class="toggle-slider"></div>
                                 </div>
                             </div>
+
                             <div class="toggle-item">
                                 <span>Professional Tax (PT)</span>
                                 <div class="toggle-switch" id="ptToggle">
                                     <div class="toggle-slider"></div>
                                 </div>
                             </div>
+
                             <div class="toggle-item">
                                 <span>ESI (if applicable)</span>
                                 <div class="toggle-switch" id="esiToggle">
@@ -55,18 +57,15 @@
                     </div>
                 </div>
 
-                <!-- Calculation Flow -->
                 <div class="flow-section">
                     <h2><span class="accent-bar"></span>Step-by-Step Breakdown (CTC → Net Salary)</h2>
-                    <div class="flow-steps" id="flowSteps"></div>
+                    <div id="flowSteps" class="flow-steps"></div>
                 </div>
 
-                <!-- Detailed Breakdown -->
                 <div class="breakdown-grid">
-                    <!-- Employee View -->
                     <div class="breakdown-column">
-                        <h2><span class="accent-bar green"></span>Employee View (What You Receive)</h2>
-                        
+                        <h2><span class="accent-bar green"></span>Employee View</h2>
+
                         <div class="info-box">
                             <h3>Monthly Salary Components</h3>
                             <table id="salaryComponents"></table>
@@ -85,9 +84,8 @@
                         </div>
                     </div>
 
-                    <!-- Employer View -->
                     <div class="breakdown-column">
-                        <h2><span class="accent-bar purple"></span>Employer View (What Company Pays)</h2>
+                        <h2><span class="accent-bar purple"></span>Employer View</h2>
 
                         <div class="info-box">
                             <h3>Monthly Cost Breakdown</h3>
@@ -98,23 +96,22 @@
                             <p class="label">Monthly CTC</p>
                             <p class="amount" id="monthlyCTC">₹0</p>
                             <div class="divider"></div>
-                            <p class="sublabel">Annual CTC: <span id="annualCTCDisplay">₹0</span></p>
+                            <p class="sublabel">Annual: <span id="annualCTCDisplay">₹0</span></p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Summary Comparison -->
                 <div class="summary-section">
                     <h2>Annual Summary & Comparison</h2>
-                    <div class="summary-grid" id="summaryGrid"></div>
-                    <div class="summary-stats" id="summaryStats"></div>
+                    <div id="summaryGrid" class="summary-grid"></div>
+                    <div id="summaryStats" class="summary-stats"></div>
                 </div>
 
-                <!-- Important Notes -->
                 <div class="notes-section">
-                    <h3>📌 How Reverse Calculation Works:</h3>
+                    <h3>📌 How Reverse Calculation Works</h3>
                     <ul id="notesList"></ul>
                 </div>
+
             </div>
         </div>
     </div>
